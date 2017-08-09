@@ -35,7 +35,9 @@ export class HomePage {
   }
 
   //test
-    
+
+  
+
   registrarContacto( nombre,
   telefono,
   edad){
