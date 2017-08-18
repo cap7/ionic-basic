@@ -22,7 +22,7 @@ export class AuthServiceProvider {
     return new Promise((resolve, reject) => {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-   
+
       this.http.post(apiUrl,
         JSON.stringify(data),
         { headers: headers }).subscribe(res => {
@@ -33,10 +33,24 @@ export class AuthServiceProvider {
     });
   }
 
-  apiListarContacto(){
-    return this.http.get(apiUrl).map(res => res.json())
-    .toPromise();
+  apiActualizarContacto(objectId, data) {
+    return new Promise((resolve, reject) => {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.http.put(apiUrl + "/" + objectId,
+        JSON.stringify(data),
+        { headers: headers }).subscribe(res => {
+          resolve(res.json());
+        }, (error) => {
+          reject(error);
+        });
+    });
   }
 
-  
+  apiListarContacto() {
+    return this.http.get(apiUrl).map(res => res.json())
+      .toPromise();
+  }
+
+
 }

@@ -1,14 +1,26 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contactos
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>Contactos</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="abrirRegistroContacto()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  
-    <ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let contacto of listaContato" (click)="abrirContactoDetalle(contacto.objectId,contacto.nombre,contacto.telefono,contacto.edad)">
+      <h2>{{ contacto.nombre | uppercase }}</h2>
+      <p hidden>{{ contacto.objectId }}</p>
+      <p>Edad: {{ contacto.edad }}</p>
+      <p>{{ contacto.telefono }}</p>
+    </ion-item>
+  </ion-list>
+
+  <!--<ion-list>
       <ion-item>
         <ion-label floating>Nombre</ion-label>
         <ion-input [(ngModel)]="nombre" name="nombre" type="text"></ion-input>
@@ -32,7 +44,7 @@
 
   <div padding>
     <button ion-button (click)=" listarContacto()">Ver contactos registrados</button>
-  </div>
+  </div>-->
 
 
 </ion-content>
