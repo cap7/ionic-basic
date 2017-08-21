@@ -31,10 +31,7 @@ export class HomePage {
 
   
   ionViewDidEnter(){
-    
      this.listarContacto();
-    //console.log(this.listaContato)
-    //this.listaContato = this.navParams.data.listaContato;
   }
 
   abrirContactoDetalle(objectId,nombre,telefono,edad) {

@@ -9,7 +9,7 @@
     <ion-toolbar>
       <ion-title>Contactos</ion-title>
       <ion-buttons end>
-        <button ion-button icon-only color="royal" (click)="operacionActualizar()" *ngIf ="buttonEditarHidden">
+        <button ion-button icon-only color="royal" (click)="operacionActualizar()" *ngIf="buttonEditarHidden">
         <ion-icon name="create"></ion-icon>
       </button>
       </ion-buttons>
@@ -19,26 +19,37 @@
 
 
 <ion-content padding>
-  <form style="display:flex; height: 100%; flex-direction: column;">
-    <ion-list style="flex: 1 0 0;">
-      <ion-item>
-        <ion-label floating>Nombre</ion-label>
-        <ion-input [(ngModel)]="nombre" name="nombre" type="text" [disabled]="editTextNombreIsenabled"></ion-input>
-      </ion-item>
+  <!--<form style="display:flex; height: 100%; flex-direction: column;">-->
+  <!--<ion-list style="flex: 1 0 0;">-->
+  <ion-grid>
+    <ion-item>
+      <img src="{{image}}"/>
+    </ion-item>
+    <ion-item>
+        <input type="file" accept="image/*" capture="camera">
+      <button ion-button block (click)="getPicture()">Tomar foto</button>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre" type="text" [disabled]="editTextNombreIsenabled"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label floating>Telefono</ion-label>
-        <ion-input [(ngModel)]="telefono" name="telefono" type="number" [disabled]="editTextTelefonoIsenabled"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label floating>Telefono</ion-label>
+      <ion-input [(ngModel)]="telefono" name="telefono" type="number" [disabled]="editTextTelefonoIsenabled"></ion-input>
+    </ion-item>
 
-      <ion-item>
-        <ion-label floating>Edad</ion-label>
-        <ion-input [(ngModel)]="edad" name="edad" type="number" [disabled]="editTextEdadIsenabled"></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label floating>Edad</ion-label>
+      <ion-input [(ngModel)]="edad" name="edad" type="number" [disabled]="editTextEdadIsenabled"></ion-input>
+    </ion-item>
+    <ion-row justify-content-around>
+      <ion-col col-12>
+        <div padding>
+          <button ion-button block (click)="operacionContacto(nombre,telefono,edad)" *ngIf="buttonGuardarHidden">Gurdar</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    </ion-list>
-    <div padding>
-      <button ion-button block (click)="operacionContacto(nombre,telefono,edad)" *ngIf ="buttonGuardarHidden">Gurdar</button>
-    </div>
-  </form>
 </ion-content>
