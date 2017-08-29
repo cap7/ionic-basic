@@ -1,4 +1,10 @@
 
-## Url de aplicación
-## https://app-ionic-capx7.herokuapp.com/
+## Aplicacíon crub contacto:
+- Registro de un contacto más foto.
+- Edición de contacto más foto.
+- Listado de los contactos registrados.
+- Eliminación de los contactos
+
+## Para probar en Android
+ Instalar MyApp.apk
 
