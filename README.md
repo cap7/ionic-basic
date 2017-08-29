@@ -6,5 +6,5 @@
 - Eliminación de los contactos
 
 ## Para probar en Android
-## Instalar el apk MyApp
+## Instalar MyApp.apk
 
