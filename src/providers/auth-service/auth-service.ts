@@ -53,6 +53,18 @@ export class AuthServiceProvider {
     });
   }
 
+  apiEliminarContacto(objectId){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.delete(this.apiUrl + "data/Contacto/"+objectId).map(res => res.json()).toPromise();
+  }
+
+  apiEliminarFotoContacto(objectId){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.delete(this.apiUrl + "files/fotos/"+objectId+".png").toPromise();
+  }
+
 
   apiStatePhoto(objectId) {
     let url = this.apiUrl + "files/fotos/" + objectId + ".png";

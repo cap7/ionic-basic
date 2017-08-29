@@ -36,6 +36,7 @@ export class ListacontactoPage {
 
   buttonGuardarHidden: boolean;
   buttonEditarHidden: boolean;
+  buttonBorrarHidden: boolean;
   buttonPhotoHidden: boolean;
   dataContacto = {};
 
@@ -67,6 +68,7 @@ export class ListacontactoPage {
       this.editTextEdadIsenabled = false;
       this.buttonGuardarHidden = true;
       this.buttonEditarHidden = false;
+      this.buttonBorrarHidden = false;
       this.buttonPhotoHidden = true;
       this.imageContacto = this.imageDefault;
       this.imagePhoto = this.imageDefault;
@@ -74,6 +76,7 @@ export class ListacontactoPage {
       this.cargarFoto(this.objectId);
       this.buttonGuardarHidden = false;
       this.buttonEditarHidden = true;
+      this.buttonBorrarHidden = true;
       this.buttonPhotoHidden = false;
     }
     
@@ -146,6 +149,20 @@ export class ListacontactoPage {
     }, (error) => {
       this.loading.dismiss();
       this.presentToast(error);
+    });
+  }
+
+  operacionEliminar(){
+    this.autService.apiEliminarContacto(this.objectId).then(data => {
+      if(data.deletionTime){
+        this.autService.apiEliminarFotoContacto(this.objectId).then(data => {
+          this.presentToast("Completado");
+          this.navCtrl.setRoot(HomePage);
+        }, error =>{
+          this.presentToast("Completado");
+          this.navCtrl.setRoot(HomePage);
+        });
+      }
     });
   }
 
