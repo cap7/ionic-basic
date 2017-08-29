@@ -17,8 +17,6 @@ export class HomePage {
   telefono: String;
   edad: number;
 
-  
-
   constructor(public navCtrl: NavController,
     public autService: AuthServiceProvider,
     public loadingCtrl: LoadingController,
@@ -27,9 +25,6 @@ export class HomePage {
     this.listaContato = this.navParams.data.listacontacto;
   }
 
- 
-
-  
   ionViewDidEnter(){
      this.listarContacto();
   }
@@ -47,9 +42,6 @@ export class HomePage {
     this.navCtrl.push(ListacontactoPage,{operacion:this.operacion});
   }
   
-
-  
-
   listarContacto(){
     this.autService.apiListarContacto().then(response => {
       this.listaContato = response;
@@ -57,10 +49,5 @@ export class HomePage {
       console.error(error);
     });
   }
-
-
-
-
-  
 
 }

@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { HttpModule } from '@angular/http';
 import { Camera } from '@ionic-native/camera';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { FilePath } from '@ionic-native/file-path';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -41,7 +44,11 @@ const cloudSettings: CloudSettings = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    Camera
+    Camera,
+    FileTransfer,
+    File,
+    FilePath
+
   ]
 })
 export class AppModule {}

@@ -19,16 +19,17 @@
 
 
 <ion-content padding>
-  <!--<form style="display:flex; height: 100%; flex-direction: column;">-->
-  <!--<ion-list style="flex: 1 0 0;">-->
   <ion-grid>
     <ion-item>
-      <img src="{{image}}"/>
+      <img src="{{imageContacto}}"/>
     </ion-item>
+
     <ion-item>
-        <input type="file" accept="image/*" capture="camera">
-      <button ion-button block (click)="getPicture()">Tomar foto</button>
+      <button ion-button (click)="getPicture()" *ngIf="buttonPhotoHidden" clear icon-only> 
+          <ion-icon name="camera"></ion-icon>
+      </button>
     </ion-item>
+
     <ion-item>
       <ion-label floating>Nombre</ion-label>
       <ion-input [(ngModel)]="nombre" name="nombre" type="text" [disabled]="editTextNombreIsenabled"></ion-input>
@@ -49,7 +50,7 @@
           <button ion-button block (click)="operacionContacto(nombre,telefono,edad)" *ngIf="buttonGuardarHidden">Gurdar</button>
         </div>
       </ion-col>
-    </ion-row>
+   </ion-row>
   </ion-grid>
 
 </ion-content>
