@@ -1,0 +1,56 @@
+{
+  "_from": "cordova-plugin-filepath",
+  "_id": "cordova-plugin-filepath@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-ULj22YKjIoWFCKas9hhwE/MqPBw=",
+  "_location": "/cordova-plugin-filepath",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-filepath",
+    "name": "cordova-plugin-filepath",
+    "escapedName": "cordova-plugin-filepath",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-filepath/-/cordova-plugin-filepath-1.0.2.tgz",
+  "_shasum": "50b8f6d982a322858508a6acf6187013f32a3c1c",
+  "_spec": "cordova-plugin-filepath",
+  "_where": "D:\\Proyecto_Ionic\\CrudUserApp\\ContactosApp\\node_modules",
+  "author": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com"
+  },
+  "bugs": {
+    "url": "https://github.com/hiddentao/cordova-plugin-filepath/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-filepath",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Resolve native file paths from content URLs for Cordova platforms",
+  "homepage": "https://github.com/hiddentao/cordova-plugin-filepath#readme",
+  "keywords": [
+    "cordova",
+    "file",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-filepath",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiddentao/cordova-plugin-filepath.git"
+  },
+  "version": "1.0.2"
+}
